@@ -12,5 +12,5 @@ export class CardComponent {
 
     @HostBinding() class = 'card';
 
-    @HostBinding('class.back') get back(): boolean { return !this.card; }
+    @HostBinding('class.face-down') get faceDown(): boolean { return !this.card; }
 }
