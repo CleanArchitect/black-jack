@@ -27,7 +27,6 @@ export class AppComponent {
 
     private createPlayers(bet: number): Player[] {
         return this.persons
-            .filter(person => person.winnings >= bet)
             .map(person => new Player(person, bet));
     }
 }

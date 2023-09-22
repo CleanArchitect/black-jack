@@ -1,12 +1,7 @@
 import { Player } from './player';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { Dealer } from './dealer';
 import { GameSummary } from './summary';
-
-export class BlackjackConfig {
-    hitOnSoft = false;
-    amountOfDecks: 1 | 2 | 4 | 6 | 8 = 1;
-}
 
 export class BlackjackGame {
     readonly gameOver = new BehaviorSubject<GameSummary>(null);

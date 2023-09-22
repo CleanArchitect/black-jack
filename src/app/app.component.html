@@ -6,11 +6,11 @@
         <div class="chips">{{ person.winnings }}</div>
     </div>
 
-    <button mat-icon-button color="accent" (click)="add()">
+    <button mat-icon-button color="accent" matTooltip="Voeg persoon toe" (click)="add()">
         <mat-icon>add</mat-icon>
     </button>
 
-    <input type="number" value="500" #bet />
+    <input type="number" value="500" matTooltip="Bet" #bet />
 
     <button mat-flat-button color="primary" (click)="start(bet.value)" [disabled]="!persons.length">START</button>
 </div>
