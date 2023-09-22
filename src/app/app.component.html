@@ -1,0 +1,16 @@
+<bj-game [game]="game" *ngIf="game"></bj-game>
+
+<div class="controls">
+    <div class="person" *ngFor="let person of persons">
+        <div class="name">{{ person.name }}</div>
+        <div class="chips">{{ person.winnings }}</div>
+    </div>
+
+    <button mat-icon-button color="accent" (click)="add()">
+        <mat-icon>add</mat-icon>
+    </button>
+
+    <input type="number" value="500" #bet />
+
+    <button mat-flat-button color="primary" (click)="start(bet.value)" [disabled]="!persons.length">START</button>
+</div>

@@ -1,0 +1,5 @@
+<span class="count">{{ cardHolder.count }}</span>
+
+<bj-card [card]="card" *ngFor="let card of cardHolder.cards"></bj-card>
+
+<bj-card *ngFor="let card of cardHolder.cardsFaceDown"></bj-card>

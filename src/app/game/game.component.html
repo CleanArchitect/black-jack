@@ -1,0 +1,29 @@
+<bj-dealer class="dealer" [dealer]="game.dealer"></bj-dealer>
+
+<div class="players">
+    <bj-player class="player" [player]="player" *ngFor="let player of game.players">
+        <div class="actions" *ngIf="game.activePlayer === player">
+            <button mat-fab color="primary" type="button" matTooltip="Surrender" (click)="game.surrender()">
+                <mat-icon>flag</mat-icon>
+            </button>
+
+            <button mat-fab color="primary" type="button" matTooltip="Double Down" (click)="game.double()"
+                *ngIf="player.cards.length === 2">
+                <mat-icon>keyboard_double_arrow_down</mat-icon>
+            </button>
+
+            <button mat-fab color="primary" type="button" matTooltip="Stand" (click)="game.stand()">
+                <mat-icon>back_hand</mat-icon>
+            </button>
+
+            <button mat-fab color="primary" type="button" matTooltip="HIT!" (click)="game.hit()">
+                <mat-icon>waving_hand</mat-icon>
+            </button>
+        </div>
+
+        <div class="result" *ngIf="game.summary && result(player) as result">
+            <span>{{ result.result }}</span>
+            <span>{{ result.winnings }}</span>
+        </div>
+    </bj-player>
+</div>
